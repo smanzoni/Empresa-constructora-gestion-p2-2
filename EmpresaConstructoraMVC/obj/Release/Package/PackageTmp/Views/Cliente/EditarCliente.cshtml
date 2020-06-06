@@ -1,0 +1,46 @@
+﻿@model Dominio.Cliente
+
+@{
+    ViewBag.Title = "Editar Cliente";
+}
+
+<form method="post">
+    <h2>Codigo cliene: @Model.IdCliente</h2>
+
+    <div>
+        <label>Nombre</label>
+        <input type="text" name="nombre" value="@Model.Nombre" />
+    </div>
+
+    <div>
+        <label>Apellido</label>
+        <input type="text" name="apellido" value="@Model.Apellido" />
+    </div>
+
+    <div>
+        <label>Documento</label>
+        <input type="text" name="documento" value="@Model.Documento" readonly/>
+    </div>
+
+    <div>
+        <label>Dirección </label>
+        <input type="text" name="direccion" value="@Model.Direccion" />
+    </div>
+
+    <div>
+        <label>Teléfono</label>
+        <input type="text" name="telefono" value="@Model.Telefono" />
+    </div>
+
+    <div>
+        <input type="submit" value="Editar" />
+    </div>
+    <div>
+        <div class="alert-info">@ViewBag.Mensaje</div>
+    </div>
+
+</form>
+    
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

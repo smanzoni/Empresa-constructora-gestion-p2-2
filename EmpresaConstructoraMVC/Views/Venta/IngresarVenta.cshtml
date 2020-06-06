@@ -1,0 +1,32 @@
+﻿@using Dominio
+@model CompraVenta
+
+@{
+    ViewBag.Title = "Detalles venta";
+}
+
+<div>
+    <h4>Detalles Venta</h4>
+</div>
+<div>
+    <ul>
+        <li><label>Cliente: @Model.ElComprador.Nombre @Model.ElComprador.Apellido </label></li>
+        <li><label>Vendedor: @Model.ElVendedor.Nombre</label></li>
+        <li><label>Nro Apto: @Model.ElApartamento.Numero</label></li>
+        <li><label>Edificio: @Model.ElApartamento.MiEdificio.Nombre</label></li>
+        <li><label>Fecha de venta: @Model.FechaCompra.ToShortDateString()</label></li>
+        <li><label>Precio Final: $@Model.Precio</label></li>
+    </ul>
+</div>
+
+<div class="alert-info">@ViewBag.Mensaje</div>
+
+
+
+
+
+
+
+
+
+

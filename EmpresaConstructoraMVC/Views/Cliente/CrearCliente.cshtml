@@ -1,0 +1,45 @@
+﻿
+@model Dominio.Cliente
+
+@{
+    ViewBag.Title = "CrearCliente";
+}
+
+<h2>CrearCliente</h2>
+
+<form method="post">
+
+    <div>
+        <label>Nombre</label>
+        <input type="text" name="nombre" value="@Model.Nombre" />
+    </div>
+
+    <div>
+        <label>Apellido</label>s
+        <input type="text" name="apellido" value="@Model.Apellido" />
+    </div>
+
+    <div>
+        <label>Documento</label>
+        <input type="text" name="documento" value="@Model.Documento" />
+    </div>
+
+    <div>
+        <label>Dirección </label>
+        <input type="text" name="direccion" value="@Model.Direccion" />
+    </div>
+
+    <div>
+        <label>Teléfono</label>
+        <input type="text" name="telefono" value="@Model.Telefono" placeholder="" />
+    </div>
+
+    <div>
+        <input type="submit" value="Ingresar"/>
+    </div>
+    <div></div>
+    <div class="alert-info">@ViewBag.Mensaje</div>
+
+</form>
+
+

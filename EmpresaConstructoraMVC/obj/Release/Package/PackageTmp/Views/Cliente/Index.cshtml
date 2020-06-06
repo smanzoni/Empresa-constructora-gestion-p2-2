@@ -1,0 +1,52 @@
+﻿@using Dominio
+@model List<Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <h2>
+        Listado de clientes
+    </h2>
+</div>
+<div>
+    <form styles="margin-top: 20px;" action="/cliente/filtrarCliente" method="post">
+        <div> <span>Compra realizada entre: </span><input type="date" id="fechaIni" name="fechaIni" value="@ViewBag.FechaIni" /> <span> y: </span><input type="date" id="fechaFin" name="fechaFin" value="@ViewBag.FechaFin" /></div>
+        <input type="submit" value="Listar" />
+    </form>
+</div>
+
+<div styles="margin-top: 20px;">
+
+    @if (Model == null)
+    {
+        <div class="alert-info">@ViewBag.Mensaje</div>
+    }
+    else if (Model.Count == 0)
+    {
+        <div class="alert-info">@ViewBag.Mensaje</div>
+    }
+    else
+    {
+        <div>
+            <br />
+            <table class="table table-bordered">
+                <thead><tr><th>Nombre</th><th>Apellido</th><th>Documento</th><th>Telefono</th><th>Opciones</th></tr></thead>
+                <tbody>
+                    @foreach (Dominio.Cliente item in Model)
+                    {
+                        <tr><td>@item.Nombre</td><td>@item.Apellido</td><td>@item.Documento</td><td>@item.Telefono</td> <td><strong><a href="/Cliente/EditarCliente?idCliente=@item.IdCliente">Editar</a></strong> | <strong><a href="/Cliente/BorrarCliente?idCliente=@item.IdCliente">Eliminar</a></strong></td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="alert-info">@ViewBag.Mensaje</div>
+    }
+</div>
+
+
+
+
+

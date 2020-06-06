@@ -1,0 +1,59 @@
+﻿@using Dominio
+@model List<CompraVenta>
+
+@{
+    ViewBag.Title = "ListarVentas";
+}
+
+<h3>@ViewBag.NombreUsuario</h3>
+
+
+<div>
+    <h3>Ventas:</h3>
+
+    <ul>
+        @foreach (CompraVenta venta in Model)
+            {
+            <li>@venta.IdCompraVenta | <a href="/Venta/ListarVentas2?idCompraVenta=@venta.IdCompraVenta.ToString()">Ampliar información</a></li>
+        }
+    </ul>
+</div>
+
+
+@{
+    CompraVenta cVselc = @ViewBag.CompraVentaSeleccionada;
+}
+
+@if (cVselc != null)
+{
+<div>
+    <h3>Apto vendido:</h3>
+    <ul>
+        <li><label>Piso:</label> @cVselc.ElApartamento.Piso</li>
+        <li><label>Nro apto:</label> @cVselc.ElApartamento.Numero</li>
+        <li><label>Edificio:</label> @cVselc.ElApartamento.MiEdificio.Nombre</li>
+        <li><label>Metraje total:</label> @cVselc.ElApartamento.MetrajeTotal mts2</li>
+        <li><label>Orientación:</label> @cVselc.ElApartamento.Orientacion</li>
+    </ul>
+
+    <h3>Cliente comprador:</h3>
+    <ul>
+        <li><label>Nombre:</label> @cVselc.ElComprador.Nombre @cVselc.ElComprador.Apellido</li>
+        <li><label>Teléfono:</label> @cVselc.ElComprador.Telefono</li>
+        <li><label>Documento:</label> @cVselc.ElComprador.Documento</li>
+    </ul>
+
+    <h3>Comision del vendedor:</h3>
+    <ul>
+        <li><label>Comision:</label>  $@ViewBag.TotalComision </li>
+    </ul>
+
+</div>
+}
+
+
+
+
+
+
+

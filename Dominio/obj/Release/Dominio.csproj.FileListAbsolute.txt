@@ -1,0 +1,10 @@
+C:\Users\alumnoFI\Desktop\EmpresaConstructoraMVC\Dominio\bin\Release\Dominio.dll
+C:\Users\alumnoFI\Desktop\EmpresaConstructoraMVC\Dominio\bin\Release\Dominio.pdb
+C:\Users\alumnoFI\Desktop\EmpresaConstructoraMVC\Dominio\obj\Release\Dominio.dll
+C:\Users\alumnoFI\Desktop\EmpresaConstructoraMVC\Dominio\obj\Release\Dominio.pdb
+C:\Users\Kaitazoff\Desktop\EmpresaConstructoraMVC\Dominio\bin\Release\Dominio.dll
+C:\Users\Kaitazoff\Desktop\EmpresaConstructoraMVC\Dominio\bin\Release\Dominio.pdb
+C:\Users\Kaitazoff\Desktop\EmpresaConstructoraMVC\Dominio\obj\Release\Dominio.csprojAssemblyReference.cache
+C:\Users\Kaitazoff\Desktop\EmpresaConstructoraMVC\Dominio\obj\Release\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Kaitazoff\Desktop\EmpresaConstructoraMVC\Dominio\obj\Release\Dominio.dll
+C:\Users\Kaitazoff\Desktop\EmpresaConstructoraMVC\Dominio\obj\Release\Dominio.pdb

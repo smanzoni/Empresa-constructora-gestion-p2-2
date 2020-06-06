@@ -1,0 +1,99 @@
+﻿@using Dominio
+@model CompraVenta
+
+@{
+    ViewBag.Title = "Crear Venta";
+}
+
+<h2>Crear Venta</h2>
+
+<form action="/Venta/IngresarVenta" method="post">
+
+    <div>
+        <label>Cliente</label>
+        <select id="clienteElegido" name="idCliente">
+            <option value="">Seleccionar Cliente</option>
+           
+                @foreach (Cliente cli in ViewBag.ListaClientes)
+                {
+                    if (ViewBag.idCliente == cli.IdCliente)
+                    {
+                        <option value="@cli.IdCliente" selected="selected"> @cli.Nombre  @cli.Apellido</option>
+                    }
+                    <option value="@cli.IdCliente">@cli.Nombre @cli.Apellido</option>
+                }
+            
+
+        </select>
+    </div>
+
+    <div>
+        <label>Edificio</label>
+
+        <select id="edificioElegido" name="idEdificio">
+            <option value="">Seleccionar edificio</option>
+           
+                @foreach (Edificio edificio in ViewBag.ListaEdificios)
+                {
+                    if (ViewBag.idEdificio == edificio.IdEdificio)
+                    {
+                        <option value="@edificio.IdEdificio" selected="selected"> @edificio.Nombre</option>
+                    }
+                    else
+                    {
+                        <option value="@edificio.IdEdificio"> @edificio.Nombre</option>
+                    }
+
+                }
+            
+
+        </select>
+    </div>
+
+
+    <div>
+        <label>Apartamento</label>
+
+        <select name="idApto" id="aptoElegido">
+            <option value="">Seleccionar apto</option>
+           
+                @foreach (Apartamento apto in ViewBag.ListaAptosEdificio)
+                {
+                    if (@apto.Disponible)
+                    {
+                        <option value="@apto.IdApto">Piso: @apto.Piso Nro: @apto.Numero</option>
+                    }
+                }
+            
+
+        </select>
+    </div>
+
+    <div>
+        <input type="submit" value="Ingresar venta" />
+    </div>
+    <div></div>
+    <div class="alert-info">@ViewBag.Mensaje</div>
+
+</form>
+
+@section Scripts{
+    <script type="text/javascript">
+        $("#edificioElegido").on("change", function () {
+            var idEdificio = $("#edificioElegido").val();
+            var idCliente = $("#clienteElegido").val();
+            var idApto = $("#aptoElegido").val();
+
+
+            //Nos redirigimos al controller Venta - ActionResult DesplegarAptos con los dos parametros
+            var url = "/Venta/DesplegarAptos?idEdificio=" + idEdificio + "&idCliente=" + idCliente + "&idApto=" + idApto;
+            // window.location.href = url;
+
+            //vamos al ActionLink con la URL
+            $("form").prop("action", url);
+            $("form").prop("method", "post");
+            $("form").submit();
+        });
+    </script>
+
+}
